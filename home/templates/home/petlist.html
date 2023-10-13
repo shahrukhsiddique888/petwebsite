@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    {% for note in notes %}
+    {% comment %} in the for loop that is object context object {% endcomment %}
+   
+    <ol  class='topnav'>
+        <a href={% url 'he' pk=note.id %} <li> {{ note.title }}</li> </a>
+      </ol>
+      
+    
+    {% endfor %}
+    <a href={% url 'logout' %} class='topnav a:hover'>logout</a>
+    <a href={% url 'note.new' %} class='topnav a:hover'>create note</a>
+ 
+{% endblock  %}
+

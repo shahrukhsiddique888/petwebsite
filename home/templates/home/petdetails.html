@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+
+<h1 class='topnav a:hover'>{{ note.title}}</h1>
+<h5 class='topnav a:hover'>{{ note.text }}</h5>
+<h5 class='topnav a:hover'>{{ note.age }}</h5>
+
+{% comment %} {% for note in notes %} {% endcomment %}
+
+    {% comment %} <a href={% url 'he' pk=note.id %} <li> {{ note.title }}</li> </a> {% endcomment %}
+    <img src="{{ note.image.url }}"></img>
+    
+ 
+{% comment %} {% endfor %} {% endcomment %}
+
+
+
+
+
+
+<a href={% url 'note.edit' pk=note.id %}>edit</a>
+<a href={% url 'note.delete' pk=note.id %}>delete</a>
+<a href={% url 'logout' %}>logout</a>
+
+{% endblock  %}
+
